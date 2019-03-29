@@ -2,7 +2,7 @@
   "application": "website", 
     "pipelines": [
     {
-      "name": "Pipeline as code",
+      "name": "Deploy Pipeline as code",
       "application": "website", 
       "keepWaitingPipelines": false,
       "lastModifiedBy": "away168",
