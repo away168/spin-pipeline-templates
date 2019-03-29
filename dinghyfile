@@ -1,9 +1,9 @@
 {
-  "application": "website", 
+  "application": "pipelineascode", 
     "pipelines": [
     {
       "name": "Deploy Pipeline as code",
-      "application": "website", 
+      "application": "pipelineascode", 
       "keepWaitingPipelines": false,
       "lastModifiedBy": "away168",
       "limitConcurrent": true,
