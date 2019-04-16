@@ -1,4 +1,5 @@
 {
+  "name": "{{ var "name" ?: "Templated Manual Judgement" }}",
   "failPipeline": true,
   "instructions": "{{ var "instructions" ?: "Continue with Pipeline?" }}",
   "judgmentInputs": [
@@ -9,8 +10,7 @@
       "value": "Nah"
     }
   ],
-  "refId": "102"
-  "name": "{{ var "name" ?: "Templated Manual Judgement" }}",
+  "refId": "102",
   "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
   "notifications": [],
   "type": "manualJudgment"
