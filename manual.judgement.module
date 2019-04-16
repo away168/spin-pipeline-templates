@@ -1,0 +1,15 @@
+{
+  "failPipeline": true,
+  "instructions": "{{ var "instructions" ?: "Continue with Pipeline?" }}",
+  "judgmentInputs": [
+    {
+      "value": "Oh Yeah"
+    },
+    {
+      "value": "Nah"
+    }
+  ],
+  "name": "{{ var "name" ?: "Templated Manual Judgement" }}",
+  "notifications": [],
+  "type": "manualJudgment"
+}
