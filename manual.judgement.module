@@ -11,7 +11,7 @@
   ],
   "refId": "102"
   "name": "{{ var "name" ?: "Templated Manual Judgement" }}",
-  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }}
+  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
   "notifications": [],
   "type": "manualJudgment"
 }
