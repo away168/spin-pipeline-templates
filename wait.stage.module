@@ -1,7 +1,7 @@
 {
   "name": "{{ var "name" ?: "custom wait" }}",
-  "refId": "1",
-  "requisiteStageRefIds": [],
+  "refId": "101",
+  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }}
   "type": "wait",
   "waitTime": {{ var "waitTime" ?: 10 }}
 }
