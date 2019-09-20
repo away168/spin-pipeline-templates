@@ -1,0 +1,92 @@
+        {
+          "account": "{{ var "account" ?: "gke-away" }}",
+          "cloudProvider": "kubernetes",
+          "comments": "This tag: ${trigger.tag} is being deployed.",
+          "manifestArtifactAccount": "away168-github-artifact-account",
+          "manifests": [
+            {
+              "apiVersion": "apps/v1",
+              "kind": "Deployment",
+              "metadata": {
+                "labels": {
+                  "app": "website"
+                },
+                "name": "website-dev",
+                "namespace": "{{ var "namespace" ?: "dev" }}"
+              },
+              "spec": {
+                "replicas": "${ #toInt( parameters.devcount ) }",
+                "selector": {
+                  "matchLabels": {
+                    "app": "website"
+                  }
+                },
+                "template": {
+                  "metadata": {
+                    "labels": {
+                      "app": "website"
+                    }
+                  },
+                  "spec": {
+                    "containers": [
+                      {
+                        "image": "away168/mysite:${trigger.tag}",
+                        "name": "mysite",
+                        "ports": [
+                          {
+                            "containerPort": 80
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "moniker": {
+            "app": "website"
+          },
+          "name": "{{ var "stageName" ?: "Deploy" }}",
+          "notifications": [
+            {
+              "address": "se-notifications",
+              "level": "stage",
+              "message": {
+                "stage.complete": {
+                  "text": ""
+                },
+                "stage.failed": {
+                  "text": ""
+                },
+                "stage.starting": {
+                  "text": "${trigger.user} started deployment"
+                }
+              },
+              "type": "slack",
+              "when": [
+                "stage.starting",
+                "stage.complete",
+                "stage.failed"
+              ]
+            }
+          ],
+          "refId": "{{ var "refId" ?: "1" }}",
+          "relationships": {
+            "loadBalancers": [],
+            "securityGroups": []
+          },
+          "requiredArtifactIds": [],
+          "requisiteStageRefIds": [],
+          "sendNotifications": true,
+          "skipExpressionEvaluation": false,
+          "source": "text",
+          "trafficManagement": {
+            "enabled": false,
+            "options": {
+              "enableTraffic": false,
+              "services": []
+            }
+          },
+          "type": "deployManifest"
+        }
