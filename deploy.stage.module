@@ -71,7 +71,7 @@
               ]
             }
           ],
-          "refId": "{{ var "refId" ?: "@name" }}",
+          "refId": "{{ var "refId" ?: "1" }}",
           "relationships": {
             "loadBalancers": [],
             "securityGroups": []
