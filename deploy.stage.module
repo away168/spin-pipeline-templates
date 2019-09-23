@@ -83,8 +83,7 @@
           "source": "text",
           "stageEnabled": {
             "expression": "{{ var "stageEnabledExpression" ?: "true"}}",
-            "type": "expression"
-          }
+            "type": "expression" },
           "trafficManagement": {
             "enabled": false,
             "options": {
