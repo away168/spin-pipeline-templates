@@ -54,7 +54,7 @@
               "level": "stage",
               "message": {
                 "stage.complete": {
-                  "text": ""
+                  "text": "${trigger.user}"
                 },
                 "stage.failed": {
                   "text": ""
@@ -71,7 +71,7 @@
               ]
             }
           ],
-          "refId": "{{ var "refId" ?: "1" }}",
+          "refId": "{{ var "refId" ?: "@name" }}",
           "relationships": {
             "loadBalancers": [],
             "securityGroups": []
