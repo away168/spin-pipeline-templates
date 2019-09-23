@@ -77,7 +77,7 @@
             "securityGroups": []
           },
           "requiredArtifactIds": [],
-          "requisiteStageRefIds": {{ var "requsiteStageRefIds" ?: [] }},
+          "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
           "sendNotifications": true,
           "skipExpressionEvaluation": false,
           "source": "text",
