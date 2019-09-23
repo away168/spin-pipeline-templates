@@ -47,7 +47,7 @@
           "moniker": {
             "app": "website"
           },
-          "name": "{{ var "stageName" ?: "Deploy" }}",
+          "name": "{{ var "name" ?: "Deploy" }}",
           "notifications": [
             {
               "address": "se-notifications",
@@ -71,16 +71,20 @@
               ]
             }
           ],
-          "refId": "{{ var "refId" ?: "1" }}",
+          "refId": "{{ var "refId" ?: "@name" }}",
           "relationships": {
             "loadBalancers": [],
             "securityGroups": []
           },
           "requiredArtifactIds": [],
-          "requisiteStageRefIds": [],
+          "requisiteStageRefIds": {{ var "requsiteStageRefIds" ?: [] }},
           "sendNotifications": true,
           "skipExpressionEvaluation": false,
           "source": "text",
+          "stageEnabled": {
+            "expression": "{{ var "stageEnabledExpression" ?: "true"}}",
+            "type": "expression"
+          }
           "trafficManagement": {
             "enabled": false,
             "options": {
