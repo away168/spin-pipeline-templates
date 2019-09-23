@@ -10,7 +10,7 @@
       "value": "Nah"
     }
   ] }},
-  "refId": "102",
+  "refId": "{{ var "refId" ?: "@name"}}",
   "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
   "notifications": [],
   "type": "manualJudgment"
