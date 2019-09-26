@@ -54,7 +54,7 @@
               "level": "stage",
               "message": {
                 "stage.complete": {
-                  "text": "this user: ${trigger.user} the pipeline"
+                  "text": "Hi ${trigger.user}, the pipeline completed!"
                 },
                 "stage.failed": {
                   "text": ""
